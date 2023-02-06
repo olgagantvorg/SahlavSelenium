@@ -31,6 +31,17 @@ public class MyFirstRun {
 
         driver.navigate().to("https://www.yandex.ru");
 
+        //Drive navigate
+        driver.navigate().back();
+        //Go forward
+        driver.navigate().forward();
+
+        //Refresh
+        driver.navigate().refresh();
+
+        //Get title
+        System.out.println("driver.getTitle() = " + driver.getTitle());
+
         Thread.sleep(3000);
         driver.quit();
     }
