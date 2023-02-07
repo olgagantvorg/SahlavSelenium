@@ -29,6 +29,7 @@ public class HW {
         System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
         //Заголовок сайта
         System.out.println("driver.getTitle() = " + driver.getTitle());
+        driver.quit();
 
     }
 }
