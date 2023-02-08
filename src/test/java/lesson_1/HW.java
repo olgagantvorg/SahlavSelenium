@@ -26,10 +26,9 @@ public class HW {
         driver.navigate().refresh();
         //На втором сайте выведите в консоль:
         //Адрес сайта
-        System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
-        //Заголовок сайта
         System.out.println("driver.getTitle() = " + driver.getTitle());
-        driver.quit();
+        //Заголовок сайта
+        System.out.println("driver.getCurrentUrl() = " + driver.getCurrentUrl());
 
     }
 }
