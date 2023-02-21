@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HW {
@@ -21,19 +22,23 @@ public class HW {
         typeText(searchString, "tent");
         clickElement(submitButton);
         sleep(3000);
-//        By nextButton = By.cssSelector("[class=\"s-pagination-item s-pagination-next s-pagination-button s-pagination-separator\"]");
-//        clickElement(nextButton);
-     List<WebElement> element = driver.findElements(By.cssSelector("[class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"] > span"));
-////        elements.forEach(element -> System.out.println(element.getText()));
 
-        for (WebElement element1:element) {
-            By nextButton = By.cssSelector("[class=\"s-pagination-item s-pagination-next s-pagination-button s-pagination-separator\"]");
-            clickElement(nextButton);
-            System.out.println(element1.getText());
+
+
+        for (int i = 1; i <= 10; i++) {
+            List<WebElement> element = driver.findElements(By.cssSelector("[class=\"a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal\"] > span"));
+            for (WebElement tents : element){
+                System.out.println(tents.getText());
+            }
+            sleep(2000);
+
+           By nextPage = By.cssSelector("[class=\"s-pagination-item s-pagination-next s-pagination-button s-pagination-separator\"]");
+           clickElement(nextPage);
         }
-//        element.forEach(element -> System.out.println(element.getText()));
+        driver.quit();
+        }
 
-    }
+
 
     public static void typeText(By selector, String text) {
         WebElement element = driver.findElement(selector);
